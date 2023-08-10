@@ -47,7 +47,7 @@ ctx.fillText("Olá mundo!", 20, 110)
 
 
 ///////////////////////////////
-// Aplicando áudio
+// Aplicando 
 
 // iniciando o canvas
 var canvas = document.getElementById('desenho')
