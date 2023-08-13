@@ -20,21 +20,24 @@
     </style>
 </head>
 <body>
-    
-    <div>
-        <form action="#" autocomplete="on">
-            
-            <label for="inomeesobrebome">Nome e Sobrenome: *</label>
-            <p><input type="text" name="nomeesobrenome" id="inomeesobrebome" placeholder="Digite seu nome e sobrenome" autocomplete="name"></p>
+  
+        <form action="#" autocomplete="on" method="post">
 
-            <label for="iemail">E-mail: *</label>
-            <p><input type="email" name="email" id="iemail" placeholder="Digite seu @email" autocomplete="email"></p>
+            <h3 id="msgValidacao"></h3>
+            <input type="text" id="nome" onclick="validarIdade()"> 
+            <br><br>
+            
+            <label for="iidade">Idade *</label>
+            <input type="number" name="idade" id="iidade" onclick="validarNome()">
+            <br><br>
+
+            
 
         </form>
 
         <p><input type="submit" value="Enviar"></p>
         <p><input type="reset" value="Limpar"></p>
-    </div>
+    
 
 
     <script src="script.js"></script>
