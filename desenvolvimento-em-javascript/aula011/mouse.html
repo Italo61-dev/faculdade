@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed ;
+        padding: 50px;
+        text-align: center;
+      }
+      </style>
+    <script>
+      function capturaMouse(event) {
+        var posX = event.clientX;
+        var posY = event.clientY;
+        document.getElementById("mensagemOutPut").textContent = 'O ponteiro do mouse está posicionado em X : [ ' + posX + " ] e em Y : [ " + posY + " ]";
+      }
+      function mouseForaDaTabela(event) {
+        document.getElementById("mensagemOutPut").textContent = 'Você moveu o ponteiro do mouse para fora da tabela.';
+      }
+      function mudaCorDaCelula(event, idCelula) {
+        var celula = document.getElementById(idCelula);
+        celula.style.backgroundColor = "#" + Math.floor(Math.random()*99999+1)
+        celula.textContent = ""
+ 
+      }
+      function cliqueUnico(event, idCelula) {
+        var celula = document.getElementById(idCelula);
+        celula.style.backgroundColor = "lime"
+        celula.textContent = "Evento click disparado."
+      }
+      function cliqueDuplo(event) {
+        alert("Evento ondblclick disparado.")
+      }
+    </script>
+  </head>
+  <body>
+    <title>Eventos em JavaScript</title>
+    <hr />
+    <div>
+      <h2>Eventos de Mouse</h2>
+      <p></p>
+      <hr>
+      <p id="mensagemOutPut"></p>
+      <hr>
+      
+      <p>
+      <table onmousemove="capturaMouse(event)" onmouseout="mouseForaDaTabela(event)" ondblclick="cliqueDuplo(event)">
+        <tr>
+          <th id="celula1" onmousemove="mudaCorDaCelula(event, 'celula1')" onclick="cliqueUnico(event, 'celula1')"></th>
+          <th id="celula2" onmousemove="mudaCorDaCelula(event, 'celula2')" onclick="cliqueUnico(event, 'celula2')"></th>
+          <th id="celula3" onmousemove="mudaCorDaCelula(event, 'celula3')" onclick="cliqueUnico(event, 'celula3')"></th>
+        </tr>
+        <tr>
+          <td id="celula4" onmousemove="mudaCorDaCelula(event, 'celula4')" onclick="cliqueUnico(event, 'celula4')"></td>
+          <td id="celula5" onmousemove="mudaCorDaCelula(event, 'celula5')" onclick="cliqueUnico(event, 'celula5')"></td>
+          <td id="celula6" onmousemove="mudaCorDaCelula(event, 'celula6')" onclick="cliqueUnico(event, 'celula6')"></td>
+        </tr>
+        <tr>
+          <td id="celula7" onmousemove="mudaCorDaCelula(event, 'celula7')" onclick="cliqueUnico(event, 'celula7')"></td>
+          <td id="celula8" onmousemove="mudaCorDaCelula(event, 'celula8')" onclick="cliqueUnico(event, 'celula8')"></td>
+          <td id="celula9" onmousemove="mudaCorDaCelula(event, 'celula9')" onclick="cliqueUnico(event, 'celula9')"></td>
+        </tr>
+        <tr>
+          <td id="celula10" onmousemove="mudaCorDaCelula(event, 'celula10')" onclick="cliqueUnico(event, 'celula10')"></td>
+          <td id="celula11" onmousemove="mudaCorDaCelula(event, 'celula11')" onclick="cliqueUnico(event, 'celula11')"></td>
+          <td id="celula12" onmousemove="mudaCorDaCelula(event, 'celula12')" onclick="cliqueUnico(event, 'celula12')"></td>
+        </tr>
+      </table>
+      </p>
+    </div>
+    <hr />
+  </body>
+  </html>
