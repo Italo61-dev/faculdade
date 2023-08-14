@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      textarea {
+        width: 53%;
+        padding: 5px;
+        text-align: center;
+      }
+      input {
+        width: 50%;
+        margin: 5px;
+        padding: 5px;
+        text-align: center;
+      }
+      </style>
+    <script>
+      function pressionaEnviar(event, idTexto) {
+        var elemento = document.getElementById(idTexto);
+        elemento.textContent = "Evento submit disparado."
+      }
+      function recebeFoco(event, idTexto) {
+        var elemento = document.getElementById(idTexto);
+        elemento.textContent = "Evento focus disparado."
+      }
+      function perdeFoco(event, idTexto) {
+        var elemento = document.getElementById(idTexto);
+        elemento.textContent = "Evento blur disparado."
+      }
+      function lerAlteracaoNome(event, idTexto) {
+        var elemento = document.getElementById(idTexto);
+        elemento.textContent += "Evento onchange disparado. Você escreveu [ "  + document.getElementById("seuNome").value + " ] no campo Nome\n"
+      }
+      function lerAlteracaoCurso(event, idTexto) {
+        var elemento = document.getElementById(idTexto);
+        elemento.textContent += "Evento onchange disparado. Você escreveu [ "  + document.getElementById("curso").value + " ] no campo Curso\n"
+      }
+    </script>
+  </head>
+  <body>
+    <title>Eventos em JavaScript</title>
+    <hr />
+    <div>
+      <h2>Eventos de Formulário</h2>
+      <p>
+        Para testar o funcionamento dos eventos de Formulário, realize o preenchimento dos campos de texto e clique em Enviar. O resultado será apresentado
+        conforme as características de cada evento.
+      </p>
+      <hr>
+      <p id="mensagemOutPut"></p>
+      <hr>
+      <form onsubmit="pressionaEnviar(event, 'mensagemOutPut')">
+      <input type="text" name="seuNome" id="seuNome" value="Nome" onfocus="recebeFoco(event, 'mensagemOutPut')" onchange="lerAlteracaoNome(event, 'areaTexto')">
+      <input type="text" name="curso" id="curso" value="Curso" onfocus="recebeFoco(event, 'mensagemOutPut')" onchange="lerAlteracaoCurso(event, 'areaTexto')">
+      <input type="text" value="Semestre" name="Semestre" id="Semestre" onblur="perdeFoco(event, 'mensagemOutPut')">
+      <p>
+        <textarea name="areaTexto" disabled id="areaTexto" cols="50" rows="10"></textarea>
+        <br>
+        <input type="submit" value=" Enviar " >
+      </p>
+    </form>
+    </div>
+    <hr />
+  </body>
+</html>
