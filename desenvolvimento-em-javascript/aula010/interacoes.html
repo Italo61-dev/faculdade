@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          width: 100%;
+          padding-left: 50px;
+          padding-right: 50px;
+        }
+      </style>
+
+    <script>
+        function capturaTecla(event) {
+          var codigoTecla = event.keyCode;
+          var nomeTecla = event.key;
+          document.getElementById("mensagemOutPut").textContent = 'Usou a tecla : [ ' + nomeTecla + " ]. O KeyCode desta tecla é: " + codigoTecla;
+        }
+    </script>
+  </head>
+
+  <body>
+
+    <title>Eventos em JavaScript</title>
+    <hr />
+
+    <div>
+      
+      <h2>Eventos de Teclado</h2>
+      <p>
+        Para testar o funcionamento dos eventos de teclado, clique sobre um dos
+        campos de texto e pressione qualquer tecla. O resultado será apresentado
+        conforme as características de cada evento.
+      </p>
+      <hr>
+      <p id="mensagemOutPut"></p>
+      <hr>
+      <p>
+        Evento (KeyUp) - Disparado sempre que o usuário solta a tecla
+        pressionada.
+      </p>
+      <input type="text" onkeyup="capturaTecla(event)" name="evento_onkeyup" id="evento_onkeyup" />
+      <p>
+        Evento (KeyDown) - Disparado sempre que o usuário pressiona a tecla.
+      </p>
+      <input type="text" onkeydown="capturaTecla(event)" name="evento_onkeydown" id="evento_onkeydown" />
+      <p>
+        Evento (KeyPress) - Este evento não é compatível com algumas versões de
+        navegador e somente é disparado por uma parte das teclas do teclado.
+      </p>
+      <input type="text" onkeypress="capturaTecla(event)" name="evento_onkeypress" id="evento_onkeypress" />
+      <p>
+      <table>
+        <tr>
+          <th>Nome do Evento</th>
+          <th>Uso inline</th>
+          <th>Uso com addEventListener</th>
+        </tr>
+        <tr>
+          <td>KeyUp</td>
+          <td>onkeyup</td>
+          <td>keyup</td>
+        </tr>
+        <tr>
+          <td>KeyDown</td>
+          <td>onkeydown</td>
+          <td>keydown</td>
+        </tr>
+        <tr>
+          <td>KeyPress</td>
+          <td>onkeypress</td>
+          <td>keypress</td>
+        </tr>
+      </table>
+      </p>
+    </div>
+    <hr />
+  </body>
+</html>!
