@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulário</title>
+</head>
+<body>
+    <header>
+        <div class="caixa">
+            <nav>
+                <ul>
+                    <li><a href="#" target="_blank">Principal</a></li>
+                    <li><a href="#" target="_blank">Serviço</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <form>
+            <label for="inomeesobrenome">Nome e Sobrenome *</label><h3 id="erroNome"></h3>
+            <input type="text" name="nomeesobrenome" id="inomeesobrenome" class="input-padrao" required="true"><br><br>
+            <label for="iemail">Email *</label><h3 id="erroEmail"></h3>
+            <input type="email" name="email" id="iemail" class="input-padrao" required="true"> <br><br>
+            <label for="itelefone">Telefone *</label><h3 id="erroTelefone"></h3>
+            <input type="tel" name="telefone" id="itelefone" class="input-padrao" required="true"><br><br>
+            <label for="imensagem" onclick="exibirInfo()">Mensagem *</label><h3 id="erroMsg"></h3>
+            <textarea name="mensagem" id="imensagem" cols="70" rows="10" class="input-padrao" required="true"></textarea><br><br>
+            <label class="checkbox"><input type="checkbox" checked> Concordo com tudo</label><br><br>
+            <input type="button" value="Enviar formulário" onclick="validarCampos()">
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
