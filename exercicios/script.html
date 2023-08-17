@@ -9,6 +9,12 @@
     <input type="button" value="Clique aqui" id="meuBotao">
 </body>
 <script>
-    
+    // Seleciona o botão pelo ID
+    var botao = document.getElementById("meuBotao");
+
+    // Adiciona um ouvinte de evento para o clique do botão
+    botao.addEventListener("click", function() {
+        alert("Você clicou no botão!");
+    });
 </script>
 </html>
