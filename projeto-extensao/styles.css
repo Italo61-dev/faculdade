@@ -1,5 +1,4 @@
 body, html {
-    overflow: hidden;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -16,6 +15,7 @@ header {
 
 main {
     padding: 2rem;
+    height: 72%;
 }
 
 main > #container {
